@@ -1,0 +1,17 @@
+%h1 Listing posts
+
+%table
+  %tr
+    %th Title
+    %th Description
+    %th
+  -@posts.each do |post|
+    %tr
+      %td
+        =post.title
+      %td
+        =post.description
+      %td
+        =link_to 'Show', post
+%br
+=link_to 'New Post', new_post_path
