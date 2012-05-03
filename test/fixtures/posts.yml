@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
 
 one:
-  title: MyString
-  description: MyText
-  body: MyText
+  title: This is a post
+  description: Read all about it
+  body: Here is all the real text i wrote out.
   publish: false
 
 two:
-  title: MyString
-  description: MyText
-  body: MyText
-  publish: false
+  title: Another post
+  description: Here is the second one
+  body: I wrote another test blog. This one will be published!
+  publish: true

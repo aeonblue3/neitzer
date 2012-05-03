@@ -6,6 +6,7 @@ class PostTest < ActiveSupport::TestCase
   # end
 
   test "article is published" do
-    assert true
+    @post = posts(:two)
+    assert @post.published?
   end
 end
