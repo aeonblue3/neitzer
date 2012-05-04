@@ -19,7 +19,8 @@
   .field
     =f.label :body
     %br
-    =f.text_area :body, class: 'tinymce'
+    =f.text_area :body, class: 'tinymce', rows: 40, cols: 120
+    =tinymce
   .field
     =f.label :publish
     %br
