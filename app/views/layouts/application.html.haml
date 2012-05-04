@@ -1,10 +1,38 @@
 !!! 5
-%html
+%html.no-js
 	%head
 		%title Neitzer
-		=stylesheet_link_tag    "application", :media => "all"
+		=stylesheet_link_tag    "application", media: "all"
+		=stylesheet_link_tag	"/assets/base.css", media: "all"
+		=stylesheet_link_tag	"/assets/skins/royalblue.css", media: "all"
 		=javascript_include_tag "application"
+		=javascript_include_tag "modernizr.min.js"
+		=javascript_include_tag "essential.plugins.min.js"
+		=javascript_include_tag "custom.js"
 		=csrf_meta_tags
 	%body
+		%header
+			.container
+				#header-logo
+					%a{href: "/"}
+						=image_tag "sample-content/logo.png"
+				%nav#navigation
+					%ul
+						%li
+							=link_to "Home", home_index_path
+						%li
+							=link_to "Posts", posts_path
+			%section.container
+				#page-header
+					%h1.title-format-3.f-20
+						I am an amazing Man!
+					%ul.social-connect
+						%li
+							%a{target: "_BLANK", href: "https://twitter.com/aeonblue3", "data-tooltip" => "Follow me on twitter"}
+								=image_tag "content/social-icons/twitter.png"
+
+
 		.container
-			=yield
+			.row
+				.span12
+					=yield
