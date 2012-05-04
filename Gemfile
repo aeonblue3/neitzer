@@ -20,12 +20,14 @@ group :assets do
 
   gem 'uglifier', '>= 1.0.3'
 end
+
 gem 'minitest'
 group :test do
   gem 'turn'
   gem 'factory_girl_rails'
   gem 'faker'
 end
+gem 'tinymce-rails'
 gem 'jquery-rails'
 
 # To use ActiveModel has_secure_password
