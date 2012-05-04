@@ -1,6 +1,8 @@
 class Post < ActiveRecord::Base
 
   def published?
-    this.publish
+    self.publish
   end
+  
+  scope :published, where(publish: true)
 end

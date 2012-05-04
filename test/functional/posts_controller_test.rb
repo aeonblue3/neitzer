@@ -2,7 +2,7 @@ require 'test_helper'
 
 class PostsControllerTest < ActionController::TestCase
   setup do
-    @post = posts(:one)
+    @post = posts(:two)
   end
 
   test "should get index" do
@@ -27,6 +27,13 @@ class PostsControllerTest < ActionController::TestCase
   test "should show post" do
     get :show, id: @post
     assert_response :success
+  end
+  
+  test "should not show unpublished post" do
+    get :show, id: @post
+    if @post.published?
+      assert_response :success
+    end
   end
 
   test "should get edit" do
