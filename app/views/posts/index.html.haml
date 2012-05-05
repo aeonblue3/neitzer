@@ -1,17 +1,22 @@
-%h1 Listing posts
-
-%table
-  %tr
-    %th Title
-    %th Description
-    %th
-  -@posts.each do |post|
-    %tr
-      %td
-        =post.title
-      %td
-        =post.description
-      %td
-        =link_to 'Show', post
-%br
-=link_to 'New Post', new_post_path
+.container
+  .row
+    .span8
+      .row
+        -@posts.each do |post|
+          .span8
+            .post.excerpt
+              %header
+                %h2.title
+                  %a{href: "#"}
+                    =post.title
+                .post-info
+                  Posted on
+                  %time{datetime: "#{post.created_at}"}
+                    =post.created_at
+                  by someone
+              .post-content.image-caption-format-1
+                %p
+                  =post.description
+              =link_to "Read More", post
+    .span4
+      Sidebar
