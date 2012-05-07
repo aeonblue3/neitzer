@@ -27,3 +27,48 @@
 					%h1.title-format-3.f-20
 						I am an amazing Man!
 		=yield
+		%footer
+			%section.container
+				.row
+					%section.span4
+						.about-us.widget
+							%h3.title
+								About Me
+							%p
+							%section
+								%h4.title
+									Stay Connected...
+								%ul.social-connect
+									%li
+										%a{href: 'https://twitter.com/aeonblue3', "data-tooltip" => "Follow us on twitter"}
+											=image_tag "content/social-icons/twitter.png"
+					%aside.span4
+						.twitter.widget
+							%h3.title
+								Latest Tweets
+							#twits
+								Loading...
+					%aside.span4
+						.flickr.widget.animate-all
+							%h3.title
+								Contact Me
+				#copyright-note.row
+					#footer-nav.uppercase.pull-left
+						=link_to "Home", home_index_path
+						=link_to "Posts", posts_path
+					%p
+						Copyright &copy; 2012 All Rights Reserved.
+		#fancybox-tmp
+		#fancybox-loading
+			%div
+		#fancybox-overlay
+		#fancybox-wrap
+			#fancybox-outer
+				#fancybox-content
+				%a#fancybox-close.demention-close-icon
+					x
+				#fancybox-title
+				%a{href: "javascript:;", id: "fancybox-left"}
+					%span.fancy-ico#fancy-left-ico
+				%a{href: "javascript:;", id: "fancybox-right"}
+					%span.fancy-ico#fancybox-right-ico

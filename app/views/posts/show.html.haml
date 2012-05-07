@@ -1,26 +1,32 @@
 %p#notice
   =notice
 
-%p
-  %b
-    Title:
-  =@post.title
+.container
+  .row
+    .span8
+      .post
+        %header
+          %h1.title
+            =@post.title
+          .post-info
+            %time{"datetime" => "#{@post.created_at}"}
+              =@post.created_at
+            by 
+            %a{rel: "author", href: "#"}
+              Chris Neitzer
+            with 
+            %a{href: "#comments"}
+              50004 comments
+        .post-content.box.mark-links
+          %p
+            =@post.body
+        %footer
+          .box.divider-bottom.border-width-2
+            Share stuff here
+          .pull-right
+            =link_to 'Edit', edit_post_path(@post)
+            |  
+            =link_to 'Back', posts_path
 
-%p
-  %b
-    Description:
-  =@post.description
-
-%p
-  %b
-    Body:
-  =@post.body
-
-%p
-  %b
-    Publish:
-  =@post.publish
-
-
-=link_to 'Edit', edit_post_path(@post) |
-=link_to 'Back', posts_path
+    .span4
+      Sidebar
