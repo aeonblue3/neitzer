@@ -6,5 +6,15 @@
 		=javascript_include_tag "application"
 		=csrf_meta_tags
 	%body
+		%header
+			.container
+				%h1
+					Chris Neitzer
+				%nav.pull-right
+					%uli.nav.nav-pills
+						%li{:class => current_class?(home_index_path)}
+							=link_to "Home", home_index_path
+						%li{:class => current_class?(posts_path)}
+							=link_to "Blog", posts_path
 		.container
 			=yield
