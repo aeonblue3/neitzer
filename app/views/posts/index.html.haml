@@ -1,17 +1,10 @@
-%h1 Listing posts
-
-%table
-  %tr
-    %th Title
-    %th Description
-    %th
-  -@posts.each do |post|
-    %tr
-      %td
-        =post.title
-      %td
-        =post.description
-      %td
-        =link_to 'Show', post
-%br
+-@posts.each do |post|
+  .page-header
+    %h1
+      =post.title
+  %p
+    =post.description
+  .pull-right
+    =link_to 'Read More...', post
+  %div{style: "clear:right;"}
 =link_to 'New Post', new_post_path
