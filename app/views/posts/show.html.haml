@@ -1,26 +1,13 @@
 %p#notice
   =notice
 
+.page-header
+  %h1
+    =@post.title
+    %small
+      By Chris Neitzer
 %p
-  %b
-    Title:
-  =@post.title
-
-%p
-  %b
-    Description:
-  =@post.description
-
-%p
-  %b
-    Body:
-  =@post.body
-
-%p
-  %b
-    Publish:
-  =@post.publish
-
+  =@post.body.html_safe
 
 =link_to 'Edit', edit_post_path(@post) |
 =link_to 'Back', posts_path

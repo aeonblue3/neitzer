@@ -8,13 +8,23 @@
 	%body
 		%header
 			.container
-				%h1
-					Chris Neitzer
 				%nav.pull-right
 					%uli.nav.nav-pills
 						%li{:class => current_class?(home_index_path)}
 							=link_to "Home", home_index_path
 						%li{:class => current_class?(posts_path)}
 							=link_to "Blog", posts_path
+				%div{style: "clear: right;"}
+				.hero-unit
+					%h1
+						Chris Neitzer
+					%p
+						A blog, mutha fucka!
 		.container
-			=yield
+			.row
+				.offset2.span8
+					=yield
+	%footer
+		.container
+			%p{style: "text-align: center;"}
+				2012 &copy; All Rights Reserved.
